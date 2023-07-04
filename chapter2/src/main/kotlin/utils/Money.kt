@@ -41,11 +41,19 @@ class Money(
         )
     }
 
+    fun times(audienceCount: Int): Money {
+        return Money(
+            this.amount.multiply(
+                BigDecimal.valueOf(audienceCount.toLong())
+            )
+        )
+    }
+
     fun isLessThan(other: Money): Boolean {
-        return amount.compareTo(other.amount) < 0
+        return amount < other.amount
     }
 
     fun isGreaterThanOrEqual(other: Money): Boolean {
-        return amount.compareTo(other.amount) >= 0
+        return amount >= other.amount
     }
 }

@@ -18,7 +18,7 @@ class Screening(
 
     fun isSequence(sequence: Int): Boolean = this.sequence == sequence
 
-    fun getMovieFee(): Money = movie.fee
+    fun getMovieFee(): Money = movie.getFee()
 
     /** 예약을 처리하는 메소드
      * @param customer 예매자에 대한 정보
