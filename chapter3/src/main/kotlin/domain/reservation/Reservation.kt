@@ -1,5 +1,6 @@
 package domain.reservation
 
+import domain.customer.Customer
 import domain.screening.Screening
 import utils.Money
 
