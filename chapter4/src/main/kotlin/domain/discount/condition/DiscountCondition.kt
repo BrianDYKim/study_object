@@ -15,4 +15,21 @@ class DiscountCondition(
     val startTime: LocalTime,
     val endTime: LocalTime,
 ) {
+    fun isDiscountable(dayOfWeek: DayOfWeek, time: LocalTime): Boolean {
+        if (this.type != DiscountConditionType.PERIOD) {
+            throw IllegalArgumentException()
+        }
+
+        return this.dayOfWeek == dayOfWeek
+                && this.startTime <= time
+                && this.endTime >= time
+    }
+
+    fun isDiscountable(sequence: Int): Boolean {
+        if (this.type != DiscountConditionType.SEQUENCE) {
+            throw IllegalArgumentException();
+        }
+
+        return this.sequence == sequence
+    }
 }
